@@ -1,0 +1,88 @@
+<section id="address">
+  <div class="container p-5">
+    <h4 class="display-4">My Shipping Address</h4>
+    <hr />
+    <app-message></app-message>
+    <div class="m-auto" *ngIf="!currentAddress">
+      <h1 class="text-center display-3 mt-5">
+        <i class="fa fa-spinner fa-spin"></i>
+      </h1>
+    </div>
+    <div *ngIf="currentAddress" class="card bg-light">
+      <div class="card-body">
+        <form>
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input
+              name="addr1"
+              type="text"
+              class="form-control"
+              [(ngModel)]="currentAddress.addr1"
+            />
+          </div>
+          <div class="form-group">
+            <label for="address">Address 2</label>
+            <input
+              name="addr2"
+              type="text"
+              class="form-control"
+              [(ngModel)]="currentAddress.addr2"
+            />
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="city">City</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="city"
+                  [(ngModel)]="currentAddress.city"
+                />
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="state">State</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="state"
+                  [(ngModel)]="currentAddress.state"
+                />
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="city">Postal Code</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="postalCode"
+                  [(ngModel)]="currentAddress.postalCode"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="country">Country</label>
+            <input
+              type="text"
+              name="city"
+              class="form-control"
+              [(ngModel)]="currentAddress.country"
+            />
+          </div>
+          <button
+            class="btn btn-danger"
+            type="button"
+            (click)="updateAddress()"
+            [disabled]="btnDisabled"
+          >
+            Chnage Address
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

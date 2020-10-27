@@ -1,0 +1,4 @@
+.vscode/
+client/src/environments/
+server/config.js
+server/images/
